@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="4fd16a88-be41-4dc2-8713-5f74442d69ad" name="richmelchr.com/crypto/test" url="http://richmelchr.com/crypto/test/">
+        <fileTransfer host="richmelchr.com" port="22" rootFolder="/home/crypto/public_html/crypto/test/" accessType="SFTP" password="dfd3df8bdfebdfcbdfdadfd0dffddf98df9c" username="crypto">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
