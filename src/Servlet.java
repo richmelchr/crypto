@@ -20,7 +20,6 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
         Affine = new Affine();
 
         String encrypt = request.getParameter("encryptText").trim();
-
         String result = Affine.encrypt(encrypt);
 
         response.setContentType("text/plain");

@@ -6,7 +6,7 @@ $(document).ready(function() {
                 encryptText : $('#encryptText').val()
             },
             success : function(responseText) {
-                $('#result p').text(responseText);
+                $('#result' +' p').text(responseText);
             }
         });
     });
