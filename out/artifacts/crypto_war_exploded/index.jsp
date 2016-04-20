@@ -15,8 +15,8 @@
                   <textarea name="changeThis" id="encryptText" tabindex="300"></textarea>
 
                   <ul>
-                      <li><a>Shift</a><input type="radio" name="encrypt" value="shift" checked></li>
-                      <li><a>Affine</a><input type="radio" name="encrypt" value="afine"></li>
+                      <li><a>Shift</a><input type="radio" name="encrypt" value="shift"></li>
+                      <li><a>Affine</a><input type="radio" name="encrypt" value="affine" checked></li>
                       <li><a>RSA</a><input type="radio" name="encrypt" value="rsa"></li>
 
                       <li>
@@ -59,7 +59,7 @@
                   <ul>
                       <li><a>All</a><input type="radio" name="decrypt" value="all" checked></li>
                       <li><a>Shift</a><input type="radio" name="decrypt" value="shift"></li>
-                      <li><a>Affine</a><input type="radio" name="decrypt" value="afine"></li>
+                      <li><a>Affine</a><input type="radio" name="decrypt" value="affine"></li>
                       <li><a>RSA</a><input type="radio" name="decrypt" value="rsa"></li>
                   </ul>
 
