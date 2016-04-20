@@ -25,16 +25,21 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
 
         if (Objects.equals(decrypt, "")) {                                  //Encryption
             if (Objects.equals(radioSelect, "shift")) {                         //encrypt Shift
-                //Shift shift = new Shift();
+                //Shift shift = new Shift();                                        //create Shift.java object link
                 //performs encryption on text
 
             } else if (Objects.equals(radioSelect, "affine")) {                 //encrypt Affine
-                Affine affine = new Affine();
-
+                Affine affine = new Affine();                                       //create Affine.java object link
+                String mult = request.getParameter("optionA").trim();               //get multiplication option from DOM
+                String add = request.getParameter("optionB").trim();                //get addition option from DOM
+                int optionA = Integer.parseInt(mult);
+                int optionB = Integer.parseInt(add);
+                affine.setEncryptKeyOne(optionA);                                   //set multiplication key
+                affine.setSecondKey(optionB);                                       //set addition key
                 result = affine.encrypt(encrypt);                                   //performs encryption on text
 
             } else if (Objects.equals(radioSelect, "rsa")) {                    //encrypt RSA
-                //Rsa rsa = new Rsa();
+                //Rsa rsa = new Rsa();                                              //create Rsa.java object link
                 //performs encryption on text
 
             } else {

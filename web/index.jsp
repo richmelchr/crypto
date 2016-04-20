@@ -14,14 +14,14 @@
 
                   <textarea name="changeThis" id="encryptText" tabindex="300"></textarea>
 
-                  <ul>
+                  <ul id="encryptSelect">
                       <li><a>Shift</a><input type="radio" name="encrypt" value="shift"></li>
                       <li><a>Affine</a><input type="radio" name="encrypt" value="affine" checked></li>
                       <li><a>RSA</a><input type="radio" name="encrypt" value="rsa"></li>
 
                       <li>
-                          <a>A=</a>
-                          <select name="mult" size="1">
+                          <a>Multiply=</a>
+                          <select name="mult" id="mult" size="1">
                               <option>1</option>
                               <option>3</option>
                               <option>5</option>
@@ -31,8 +31,8 @@
                       </li>
 
                       <li>
-                          <a>B=</a>
-                          <select name="add" size="1">
+                          <a>Add=</a>
+                          <select name="add" id="add" size="1">
                               <option>0</option>
                               <option>1</option>
                               <option>2</option>
@@ -56,11 +56,33 @@
               <fieldset id="decryptInput">
                   <textarea name="stuff" id="decryptText" tabindex="300"></textarea>
 
-                  <ul>
+                  <ul id="decryptSelect">
                       <li><a>All</a><input type="radio" name="decrypt" value="all" checked></li>
                       <li><a>Shift</a><input type="radio" name="decrypt" value="shift"></li>
                       <li><a>Affine</a><input type="radio" name="decrypt" value="affine"></li>
                       <li><a>RSA</a><input type="radio" name="decrypt" value="rsa"></li>
+
+                      <li class="selections affine">
+                          <a>Multiply=</a>
+                          <select name="mult" id="decryptMult" size="1">
+                              <option>1</option>
+                              <option>3</option>
+                              <option>5</option>
+                              <option>7</option>
+                              <option>9</option>
+                          </select>
+                      </li>
+
+                      <li class="selections affine shift">
+                          <a>Add=</a>
+                          <select name="add" id="decryptAdd" size="1">
+                              <option>0</option>
+                              <option>1</option>
+                              <option>2</option>
+                              <option>3</option>
+                              <option>4</option>
+                          </select>
+                      </li>
                   </ul>
 
                   <a href="#" type="submit" name="decrypt" id="decryptBtn" class="myButton right" tabindex="0">Decrypt</a>
@@ -72,18 +94,6 @@
       <div id="result"><p></p></div>
 
   </div>
-
-
-
-
-
-
-
-
-  <%--<form action="Servlet">--%>
-      <%--<input name="searchTerm" />--%>
-      <%--<input type="submit" />--%>
-  <%--</form>--%>
 
   </body>
 </html>

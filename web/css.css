@@ -79,6 +79,9 @@ fieldset#encryptInput ul, fieldset#decryptInput ul {
     margin-top: -1.1em;
     border: 0;
 }
+.selections {
+    display: none;
+}
 /*--result styling------------------------------------------*/
 #result p {
     max-width: 674px;

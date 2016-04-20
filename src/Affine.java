@@ -83,6 +83,11 @@ public class Affine {
     {
         this.encryptKeyTwo = secondKey;
     }
+
+
+    //-------------------------------------------------------------------------------------------------------
+
+
     /**
      * This is the module setter, i'm not sure why you would want to change this, but if needed
      * you can use it to set a different value other that 26.
