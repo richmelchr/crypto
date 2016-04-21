@@ -3,7 +3,7 @@ $(document).ready(function() {
         $.ajax({
             url: 'Servlet',
             data: {
-                radioSelect: $('encryptSelect' + ' input:checked').val(),
+                radioSelect: $('#encryptSelect' + ' input:checked').val(),
                 optionA: $('#mult').val(),
                 optionB: $('#add').val(),
                 encryptText: $('#encryptText').val(),
@@ -19,14 +19,16 @@ $(document).ready(function() {
         $.ajax({
             url: 'Servlet',
             data: {
-                radioSelect: $('input:checked').val(),
+                radioSelect: $('#decryptSelect' + ' input:checked').val(),
+                optionA: $('#mult').val(),
+                optionB: $('#add').val(),
                 encryptText: "",
                 decryptText: $("#decryptText").val()
             },
             success: function(responseText) {
                 $('#result' +' p').text(responseText);
             }
-        })
+        });
     });
 
     $("#decryptSelect").click(function() {
@@ -38,6 +40,18 @@ $(document).ready(function() {
             $(".affine").css("display", "block");   //show affine decrypt options
         } else if (radioSelect == "rsa") {
             $(".rsa").css("display", "block");      //show RSA decrypt options
+        }
+    });
+
+    $("#encryptSelect").click(function() {
+        var radioSelect = $('#encryptSelect' + ' input:checked').val();
+        $(".enSelections").css("display", "none");    //hide all decrypt option DOM elements
+        if (radioSelect == "shift") {
+            $(".enShift").css("display", "block");    //show shift decrypt options
+        } else if (radioSelect == "affine") {
+            $(".enAffine").css("display", "block");   //show affine decrypt options
+        } else if (radioSelect == "rsa") {
+            $(".enRsa").css("display", "block");      //show RSA decrypt options
         }
     });
 

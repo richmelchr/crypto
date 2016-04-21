@@ -19,7 +19,7 @@
                       <li><a>Affine</a><input type="radio" name="encrypt" value="affine" checked></li>
                       <li><a>RSA</a><input type="radio" name="encrypt" value="rsa"></li>
 
-                      <li>
+                      <li class="enSelections enAffine">
                           <a>Multiply=</a>
                           <select name="mult" id="mult" size="1">
                               <option>1</option>
@@ -30,7 +30,7 @@
                           </select>
                       </li>
 
-                      <li>
+                      <li class="enSelections enAffine enShift">
                           <a>Add=</a>
                           <select name="add" id="add" size="1">
                               <option>0</option>
