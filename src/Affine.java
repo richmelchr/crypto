@@ -53,8 +53,8 @@ public class Affine {
             char letter = inputString.charAt(i);
             if (Character.isLetter(letter))
             {
-                int decoded = inverse.intValue() * (letter - 'a' - encryptKeyTwo + module);
-                letter = (char) (decoded % module + 'a');
+                int decoded = inverse.intValue() * (letter - 'a' - encryptKeyTwo + module); //these lines are diffrent from encrypt
+                letter = (char) (decoded % module + 'a'); //these lines are diffrent from encrypt
             }
             decryptedString.append(letter);
         }

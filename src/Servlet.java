@@ -48,8 +48,24 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
         }
 
         if (Objects.equals(encrypt, "")) {                                  //Decryption
-            Affine affine = new Affine();
-            result = affine.decrypt(decrypt);
+            if (Objects.equals(radioSelect, "shift")) {
+
+            } else if (Objects.equals(radioSelect, "affine")) {
+                Affine affine = new Affine();
+                String mult = request.getParameter("optionA").trim();               //get multiplication option from DOM
+                String add = request.getParameter("optionB").trim();                //get addition option from DOM
+                int optionA = Integer.parseInt(mult);
+                int optionB = Integer.parseInt(add);
+                affine.setEncryptKeyOne(optionA);                                   //set multiplication key
+                affine.setSecondKey(optionB);                                       //set addition key
+                result = affine.decrypt(decrypt);
+
+            } else if (Objects.equals(radioSelect, "rsa")) {
+
+            } else {
+                result = "error: no radio button selected";
+            }
+
         }
 
 
