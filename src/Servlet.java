@@ -25,13 +25,16 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
 
         if (Objects.equals(decrypt, "")) {                                  //Encryption
             if (Objects.equals(radioSelect, "shift")) {                         //encrypt Shift
-                //Shift shift = new Shift();                                        //create Shift.java object link
-                //performs encryption on text
+                Shift shift = new Shift();                                          //create Shift.java object link
+                String add = request.getParameter("optionA");                       //get addition option from DOM
+                int optionA = Integer.parseInt(add);
+                shift.setEncryptShift(optionA);                                     //set addition key
+                result = shift.encrypt(encrypt);                                    //performs encryption on text
 
             } else if (Objects.equals(radioSelect, "affine")) {                 //encrypt Affine
                 Affine affine = new Affine();                                       //create Affine.java object link
-                String mult = request.getParameter("optionA").trim();               //get multiplication option from DOM
-                String add = request.getParameter("optionB").trim();                //get addition option from DOM
+                String mult = request.getParameter("optionA");                      //get multiplication option from DOM
+                String add = request.getParameter("optionB");                       //get addition option from DOM
                 int optionA = Integer.parseInt(mult);
                 int optionB = Integer.parseInt(add);
                 affine.setEncryptKeyOne(optionA);                                   //set multiplication key
@@ -49,11 +52,16 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
 
         if (Objects.equals(encrypt, "")) {                                  //Decryption
             if (Objects.equals(radioSelect, "shift")) {
+                Shift shift = new Shift();                                          //create Shift.java object link
+                String add = request.getParameter("optionA");                       //get addition option from DOM
+                int optionA = Integer.parseInt(add);
+                shift.setEncryptShift(optionA);                                     //set addition key
+                result = shift.decrypt(decrypt);                                    //performs encryption on text
 
             } else if (Objects.equals(radioSelect, "affine")) {
                 Affine affine = new Affine();
-                String mult = request.getParameter("optionA").trim();               //get multiplication option from DOM
-                String add = request.getParameter("optionB").trim();                //get addition option from DOM
+                String mult = request.getParameter("optionA");               //get multiplication option from DOM
+                String add = request.getParameter("optionB");                //get addition option from DOM
                 int optionA = Integer.parseInt(mult);
                 int optionB = Integer.parseInt(add);
                 affine.setEncryptKeyOne(optionA);                                   //set multiplication key

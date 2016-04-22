@@ -2,39 +2,33 @@ import java.math.BigInteger;
 
 public class Shift 
 {
-	int encryptionShift;
-	int decryptionShift;
+	int encryptShift;
 	int module;
 	
-	Shift ()
-	{
-		encryptionShift = 5;
-		decryptionShift = 5;
+	Shift () {
+		encryptShift = 5;
 		module = 26;
 	}
-	
-	
-	
+
 	public String encrypt(String inputString)
 	{
 		StringBuilder encryptedString = new StringBuilder();
 	    for (int i = 0; i < inputString.length(); i++) 
 	    {
-	        char letter = (char)(inputString.charAt(i)+encryptionShift);
+	        char letter = (char)(inputString.charAt(i)+encryptShift);
 	        if (Character.isLetter(letter)) 
 	        if(letter > 'z')
 	        {
-	            letter = (char)((letter - (module-encryptionShift)));
+	            letter = (char)((letter - (module-encryptShift)));
 	        }
 	        else
 	        {
-				letter = (char)((letter + encryptionShift));
+				letter = (char)((letter + encryptShift));
 			}
 	        encryptedString.append(letter);
 	    }
 	    return encryptedString.toString();
     }
-	
 	
 	public String decrypt(String inputString)
 	{
@@ -42,47 +36,32 @@ public class Shift
 	    
 		for (int i = 0; i < inputString.length(); i++) 
 	    {
-	        char letter = inputString.charAt(i);
-	        if (Character.isLetter(letter)) 
-	        	        if(letter > 'z')
+			char letter = (char)(inputString.charAt(i)-encryptShift);
+			if (Character.isLetter(letter))
+				if(letter > 'z')
 	        {
-	            letter = (char)((letter + (module-decryptionShift)));
+	            letter = (char)((letter + (module-encryptShift)));
 	        }
 	        else
 	        {
-				letter = (char)((letter - decryptionShift));
+				letter = (char)((letter - encryptShift));
 			}
+			decryptedString.append(letter);
 	    }
 	    return decryptedString.toString();
 	}
 	
-	
-	public void setEncryptionShift(int encryptionShift)
+	public void setEncryptShift(int encryptShift)
 	{
-		if(encryptionShift % 2 !=0)
-			this.encryptionShift = encryptionShift;
+		if(encryptShift % 2 !=0)
+			this.encryptShift = encryptShift;
 		else
-			this.encryptionShift = (encryptionShift+1);
+			this.encryptShift = (encryptShift+1);
 	}
 	
-	
-	public void setDecryptionShift(int decryptionShift)
+	public int getEncryptShift()
 	{
-		if(decryptionShift % 2 !=0)
-			this.decryptionShift = decryptionShift;
-		else
-			this.decryptionShift = (decryptionShift+1);
+		return encryptShift;
 	}
-	
-	public int getEncryptionShift()
-	{
-		return encryptionShift;
-	}
-	
-	
-	public int getDecryptionShift()
-	{
-		return decryptionShift;
-	}
-	
+
 }

@@ -7,7 +7,7 @@ import java.math.BigInteger;
 import java.io.*;
 import java.lang.StringBuilder;
 
-
+/*
 public class RSA
 {
 	BigInteger key = 0;	//Initializes Inputs
@@ -34,3 +34,4 @@ public class RSA
 	}	
 	
 }
+*/
