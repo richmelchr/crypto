@@ -1,5 +1,5 @@
-$(document).ready(function() {
-    $('#encryptBtn').click(function() {
+$(document).ready(function () {
+    $('#encryptBtn').click(function () {
         $.ajax({
             url: 'Servlet',
             data: {
@@ -9,13 +9,13 @@ $(document).ready(function() {
                 encryptText: $('#encryptText').val(),
                 decryptText: ""
             },
-            success: function(responseText) {
-                $('#result' +' p').text(responseText);
+            success: function (responseText) {
+                $('#result' + ' p').text(responseText);
             }
         });
     });
 
-    $("#decryptBtn").click(function() {
+    $("#decryptBtn").click(function () {
         $.ajax({
             url: 'Servlet',
             data: {
@@ -25,13 +25,13 @@ $(document).ready(function() {
                 encryptText: "",
                 decryptText: $("#decryptText").val()
             },
-            success: function(responseText) {
-                $('#result' +' p').text(responseText);
+            success: function (responseText) {
+                $('#result' + ' p').text(responseText);
             }
         });
     });
 
-    $("#decryptSelect").click(function() {
+    $("#decryptSelect").click(function () {
         var radioSelect = $('#decryptSelect' + ' input:checked').val();
         $(".selections").css("display", "none");    //hide all decrypt option DOM elements
         if (radioSelect == "shift") {
@@ -43,7 +43,7 @@ $(document).ready(function() {
         }
     });
 
-    $("#encryptSelect").click(function() {
+    $("#encryptSelect").click(function () {
         var radioSelect = $('#encryptSelect' + ' input:checked').val();
         $(".enSelections").css("display", "none");    //hide all decrypt option DOM elements
         if (radioSelect == "shift") {

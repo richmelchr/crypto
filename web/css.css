@@ -1,68 +1,70 @@
 @charset "utf-8";
 /*-----CSS Reset-------*/
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, img, ins, kbd, q, s, samp, small, strike, strong, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td; {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    outline: 0;
-    font-size: 100%;
-    vertical-align: baseline;
-    background: transparent;
-    max-height: 999999px;
-}
 body {
     line-height: 1;
     height: 100%;
     overflow-x: hidden;
     background-color: #232323;
 }
+
 ol, ul, li {
     list-style: none; /* gets rid of the bullets next to links*/
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after, q:before, q:after {
-    content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 /*-------------------------*/
 .right {
     float: right;
 }
+
 .left {
     float: left;
 }
+
 #body {
     min-height: 100%;
     margin: 0 auto;
     width: 100%;
 }
+
 #wrap {
     width: 100%;
 }
+
 #wrap div {
     width: 700px;
     margin: 70px auto 0 auto;
 }
+
 h1 {
     color: #BBBBBB;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0 0 -4px 13px;
 }
+
 textarea#encryptText, textarea#decryptText {
     width: 100%;
     height: 200px;
     background-color: #AAAAAA;
     border-radius: 3px;
 }
+
 #encryptInput, #decryptInput {
     border: none;
 }
+
 fieldset#encryptInput ul li, fieldset#decryptInput ul li {
     float: left;
     margin-right: 20px;
@@ -71,17 +73,25 @@ fieldset#encryptInput ul li, fieldset#decryptInput ul li {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.2em;
 }
+
 fieldset#encryptInput ul, fieldset#decryptInput ul {
     padding: 0;
     margin: 0;
 }
+
 #encryptInput select, #decryptInput select {
     margin-top: -1.1em;
     border: 0;
 }
-.selections {
+
+.enSelections, .selections {
     display: none;
 }
+
+.enShift, .shift {
+    display: block;
+}
+
 /*--result styling------------------------------------------*/
 #result p {
     max-width: 674px;
@@ -89,40 +99,43 @@ fieldset#encryptInput ul, fieldset#decryptInput ul {
     word-wrap: break-word;
     color: #BBBBBB;
 }
+
 /*--button styling-------------------------------------*/
 .myButton {
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #aaaaaa), color-stop(1, #707070));
-    background:-moz-linear-gradient(top, #aaaaaa 5%, #707070 100%);
-    background:-webkit-linear-gradient(top, #aaaaaa 5%, #707070 100%);
-    background:-o-linear-gradient(top, #aaaaaa 5%, #707070 100%);
-    background:-ms-linear-gradient(top, #aaaaaa 5%, #707070 100%);
-    background:linear-gradient(to bottom, #aaaaaa 5%, #707070 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#707070',GradientType=0);
-    background-color:#aaaaaa;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    border-radius:3px;
-    display:inline-block;
-    cursor:pointer;
-    color:#000;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #aaaaaa), color-stop(1, #707070));
+    background: -moz-linear-gradient(top, #aaaaaa 5%, #707070 100%);
+    background: -webkit-linear-gradient(top, #aaaaaa 5%, #707070 100%);
+    background: -o-linear-gradient(top, #aaaaaa 5%, #707070 100%);
+    background: -ms-linear-gradient(top, #aaaaaa 5%, #707070 100%);
+    background: linear-gradient(to bottom, #aaaaaa 5%, #707070 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#707070', GradientType=0);
+    background-color: #aaaaaa;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 3px;
+    display: inline-block;
+    cursor: pointer;
+    color: #000;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size:15px;
-    padding:7px 15px;
-    text-decoration:none;
-    text-shadow:0 0 0 #000;
+    font-size: 15px;
+    padding: 7px 15px;
+    text-decoration: none;
+    text-shadow: 0 0 0 #000;
     margin: 4px 0 0 0;
 }
+
 .myButton:hover {
-    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #707070), color-stop(1, #aaaaaa));
-    background:-moz-linear-gradient(top, #707070 5%, #aaaaaa 100%);
-    background:-webkit-linear-gradient(top, #707070 5%, #aaaaaa 100%);
-    background:-o-linear-gradient(top, #707070 5%, #aaaaaa 100%);
-    background:-ms-linear-gradient(top, #707070 5%, #aaaaaa 100%);
-    background:linear-gradient(to bottom, #707070 5%, #aaaaaa 100%);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#707070', endColorstr='#aaaaaa',GradientType=0);
-    background-color:#707070;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #707070), color-stop(1, #aaaaaa));
+    background: -moz-linear-gradient(top, #707070 5%, #aaaaaa 100%);
+    background: -webkit-linear-gradient(top, #707070 5%, #aaaaaa 100%);
+    background: -o-linear-gradient(top, #707070 5%, #aaaaaa 100%);
+    background: -ms-linear-gradient(top, #707070 5%, #aaaaaa 100%);
+    background: linear-gradient(to bottom, #707070 5%, #aaaaaa 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#707070', endColorstr='#aaaaaa', GradientType=0);
+    background-color: #707070;
 }
+
 .myButton:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }

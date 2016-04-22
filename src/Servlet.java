@@ -51,24 +51,25 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
         }
 
         if (Objects.equals(encrypt, "")) {                                  //Decryption
-            if (Objects.equals(radioSelect, "shift")) {
+            if (Objects.equals(radioSelect, "shift")) {                         //decrypt Shift
                 Shift shift = new Shift();                                          //create Shift.java object link
                 String add = request.getParameter("optionA");                       //get addition option from DOM
                 int optionA = Integer.parseInt(add);
                 shift.setEncryptShift(optionA);                                     //set addition key
                 result = shift.decrypt(decrypt);                                    //performs encryption on text
 
-            } else if (Objects.equals(radioSelect, "affine")) {
+            } else if (Objects.equals(radioSelect, "affine")) {                 //decrypt Affine
                 Affine affine = new Affine();
-                String mult = request.getParameter("optionA");               //get multiplication option from DOM
-                String add = request.getParameter("optionB");                //get addition option from DOM
+                String mult = request.getParameter("optionA");                      //get multiplication option from DOM
+                String add = request.getParameter("optionB");                       //get addition option from DOM
                 int optionA = Integer.parseInt(mult);
                 int optionB = Integer.parseInt(add);
                 affine.setEncryptKeyOne(optionA);                                   //set multiplication key
                 affine.setSecondKey(optionB);                                       //set addition key
-                result = affine.decrypt(decrypt);
+                result = affine.decrypt(decrypt);                                   //perform encryption on text
 
-            } else if (Objects.equals(radioSelect, "rsa")) {
+            } else if (Objects.equals(radioSelect, "rsa")) {                    //decrypt RSA
+                //Rsa rsa = new Rsa();                                              //create Rsa.java object link
 
             } else {
                 result = "error: no radio button selected";
@@ -83,5 +84,6 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
 
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {}
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    }
 }
