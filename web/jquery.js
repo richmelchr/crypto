@@ -20,8 +20,8 @@ $(document).ready(function () {
             url: 'Servlet',
             data: {
                 radioSelect: $('#decryptSelect' + ' input:checked').val(),
-                optionA: $('#mult').val(),
-                optionB: $('#add').val(),
+                optionA: $('#decryptMult').val(),
+                optionB: $('#decryptAdd').val(),
                 encryptText: "",
                 decryptText: $("#decryptText").val()
             },
@@ -56,3 +56,4 @@ $(document).ready(function () {
     });
 
 });
+

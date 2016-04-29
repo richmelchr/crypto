@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
-  <artifact type="exploded-war" name="crypto:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/crypto_war_exploded</output-path>
-    <root id="root">
+  <artifact type="war" name="crypto">
+    <output-path>$PROJECT_DIR$/out/artifacts/crypto</output-path>
+    <root id="archive" name="crypto.war">
       <element id="javaee-facet-resources" facet="crypto/web/Web" />
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">

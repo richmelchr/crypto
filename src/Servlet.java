@@ -10,6 +10,7 @@ import java.io.PrintWriter;
 import java.util.Objects;
 import javax.servlet.annotation.HttpConstraint;
 import javax.servlet.annotation.ServletSecurity;
+import java.io.PrintWriter;
 
 @WebServlet(name = "Servlet", urlPatterns = {"/Servlet"})
 public class Servlet extends HttpServlet implements javax.servlet.Servlet {
@@ -42,8 +43,8 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
                 result = affine.encrypt(encrypt);                                   //performs encryption on text
 
             } else if (Objects.equals(radioSelect, "rsa")) {                    //encrypt RSA
-                //Rsa rsa = new Rsa();                                              //create Rsa.java object link
-                //performs encryption on text
+                RSA rsa = new RSA();                                              //create Rsa.java object link
+                result = rsa.encrypt(encrypt);
 
             } else {
                 result = "error: no radio button selected";
@@ -69,7 +70,8 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
                 result = affine.decrypt(decrypt);                                   //perform encryption on text
 
             } else if (Objects.equals(radioSelect, "rsa")) {                    //decrypt RSA
-                //Rsa rsa = new Rsa();                                              //create Rsa.java object link
+                RSA rsa = new RSA();                                              //create Rsa.java object link
+                result = rsa.decrypt(decrypt);                                    //create Rsa.java object link
 
             } else {
                 result = "error: no radio button selected";

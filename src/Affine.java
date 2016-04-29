@@ -28,6 +28,7 @@ public class Affine {
      * @param inputString
      * @return the encrypted string
      */
+
     public String encrypt(String inputString) {
         StringBuilder encryptedString = new StringBuilder();
         for (int i = 0; i < inputString.length(); i++) {
@@ -82,7 +83,6 @@ public class Affine {
             this.encryptKeyOne = (encryptKeyOne + 1);
     }
 
-
     //-------------------------------------------------------------------------------------------------------
 
     public int getModule() {
@@ -111,6 +111,5 @@ public class Affine {
     public void setSecondKey(int secondKey) {
         this.encryptKeyTwo = secondKey;
     }
-
 
 }

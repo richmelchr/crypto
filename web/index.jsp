@@ -8,7 +8,7 @@
 
 <div id="wrap">
     <div>
-        <h1>encrypt</h1>
+        <a href="encrypt/"><h1>encrypt</h1></a>
         <form id="encryptForm" class="" name="encrypt" action="Servlet">
             <fieldset id="encryptInput">
 
@@ -99,3 +99,5 @@
 
 <script src="jquery-2.2.0.min.js"></script>
 <script src="jquery.js"></script>
+
+

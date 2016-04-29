@@ -1,5 +1,3 @@
-import java.math.BigInteger;
-
 public class Shift {
     int encryptShift;
     int module;
@@ -57,3 +55,4 @@ public class Shift {
     }
 
 }
+

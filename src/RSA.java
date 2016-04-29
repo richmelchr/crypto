@@ -1,37 +1,70 @@
-/* 
-This program assumes the user knows the public key/modulus when encrypting or private key/modulus when decrypting (which means this needs to be an input that they give us Im not sure how you want to implement that)
-It takes the message one character at a time converts it to ascii value apples the public/private key and modulus then converts the character back and replaces the character within the message
-The final message would be stored in message
-*/
 import java.math.BigInteger;
-import java.io.*;
-import java.lang.StringBuilder;
 
+public class RSA {
+    BigInteger publicKey;
+    BigInteger privateKey;
+    BigInteger modulus;
+
+    RSA () {
+        publicKey = new BigInteger("5");
+        privateKey = new BigInteger("11");
+        modulus = new BigInteger("14");
+    }
+
+    public String encrypt(String inputString) {
+        StringBuilder encryptedString = new StringBuilder();
+
+        for (int i=0; i < inputString.length(); i++)
+        {
+            char letter = inputString.charAt(i);
+            BigInteger some = new BigInteger("112");
+            if (Character.isLetter(letter))
+            {
+                BigInteger newStuff = BigInteger.valueOf((int) letter);
+                some = newStuff.modPow(publicKey, privateKey);
+            }
+            int something = some.intValue();
+            char finished = ((char) something);
+            encryptedString.append(finished);
+        }
+        return encryptedString.toString();
+    }
+
+
+    public String decrypt(String inputString) {
+        StringBuilder decryptedString = new StringBuilder();
+
+        for (int i = 0; i < inputString.length(); i++)
+        {
+            char letter = inputString.charAt(i);
+            BigInteger some = BigInteger.valueOf(0);
+            if (Character.isLetter(letter))
+            {
+                BigInteger newStuff;
+                newStuff = BigInteger.valueOf((int) letter);
+                some = newStuff.modPow(publicKey, modulus);
+            }
+            int something = some.intValue();
+            char finished = ((char) something);
+            decryptedString.append(finished);
+        }
+        return decryptedString.toString();
+    }
+
+    public void setPublicKey(int publicKey) {
+        this.publicKey = BigInteger.valueOf(publicKey);
+    }
+
+    public void setPrivateKey(int privateKey) {
+        this.privateKey = BigInteger.valueOf(privateKey);
+    }
+
+    public void setModulus(int modulus) {
+        this.modulus = BigInteger.valueOf(modulus);
+    }
 /*
-public class RSA
-{
-	BigInteger key = 0;	//Initializes Inputs
-	BigInteger modulus = 0;
-	BigInteger ascii = 0;
-	char chara = 'a';
-	int i;
-	int len;
-	
-	InputStreamReader isr = new InputStreamReader (System.in);
-       	BufferedReader br = new BufferedReader (isr);
-
-	String message = br.readLine ();	//Gets values from user
-	key = br.readline ();
-	modulus = br.readline ();
-	
-	for(i = 0, len = message.length(); i < len; i++)
-	{
-		chara = message.charAt(i);	//Does conversion
-		ascii = (int) chara;
-		ascii.modPow(key, modulus);
-		chara = (char)ascii;
-		setCharAt(i, chara);
-	}	
-	
-}
+    public int getPublicKey() {return PublicKey;}
+    public int getPrivateKey() {return PrivateKey;}
+    public int getModulus() {return Modulus;}
 */
+}

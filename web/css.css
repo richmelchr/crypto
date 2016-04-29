@@ -6,65 +6,55 @@ body {
     overflow-x: hidden;
     background-color: #232323;
 }
-
 ol, ul, li {
     list-style: none; /* gets rid of the bullets next to links*/
 }
-
 blockquote, q {
     quotes: none;
 }
-
 blockquote:before, blockquote:after, q:before, q:after {
     content: none;
 }
-
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
 /*-------------------------*/
 .right {
     float: right;
 }
-
 .left {
     float: left;
 }
-
 #body {
     min-height: 100%;
     margin: 0 auto;
     width: 100%;
 }
-
 #wrap {
     width: 100%;
 }
-
 #wrap div {
     width: 700px;
     margin: 70px auto 0 auto;
 }
-
+#wrap a {
+    text-decoration: none;
+}
 h1 {
     color: #BBBBBB;
     font-family: 'Source Sans Pro', sans-serif;
     margin: 0 0 -4px 13px;
 }
-
 textarea#encryptText, textarea#decryptText {
     width: 100%;
     height: 200px;
     background-color: #AAAAAA;
     border-radius: 3px;
 }
-
 #encryptInput, #decryptInput {
     border: none;
 }
-
 fieldset#encryptInput ul li, fieldset#decryptInput ul li {
     float: left;
     margin-right: 20px;
@@ -73,25 +63,20 @@ fieldset#encryptInput ul li, fieldset#decryptInput ul li {
     font-family: 'Source Sans Pro', sans-serif;
     font-size: 1.2em;
 }
-
 fieldset#encryptInput ul, fieldset#decryptInput ul {
     padding: 0;
     margin: 0;
 }
-
 #encryptInput select, #decryptInput select {
     margin-top: -1.1em;
     border: 0;
 }
-
 .enSelections, .selections {
     display: none;
 }
-
 .enShift, .shift {
     display: block;
 }
-
 /*--result styling------------------------------------------*/
 #result p {
     max-width: 674px;
@@ -99,7 +84,6 @@ fieldset#encryptInput ul, fieldset#decryptInput ul {
     word-wrap: break-word;
     color: #BBBBBB;
 }
-
 /*--button styling-------------------------------------*/
 .myButton {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #aaaaaa), color-stop(1, #707070));
@@ -123,7 +107,6 @@ fieldset#encryptInput ul, fieldset#decryptInput ul {
     text-shadow: 0 0 0 #000;
     margin: 4px 0 0 0;
 }
-
 .myButton:hover {
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #707070), color-stop(1, #aaaaaa));
     background: -moz-linear-gradient(top, #707070 5%, #aaaaaa 100%);
@@ -134,7 +117,6 @@ fieldset#encryptInput ul, fieldset#decryptInput ul {
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#707070', endColorstr='#aaaaaa', GradientType=0);
     background-color: #707070;
 }
-
 .myButton:active {
     position: relative;
     top: 1px;
