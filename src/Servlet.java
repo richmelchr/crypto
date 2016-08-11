@@ -81,7 +81,7 @@ public class Servlet extends HttpServlet implements javax.servlet.Servlet {
 
 
         //reply back to server
-        response.setContentType("text/plain");
+//        response.setContentType("text/plain");
         response.getWriter().write(result);                             //sends encrypted text back to DOM
 
     }

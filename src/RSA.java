@@ -6,9 +6,9 @@ public class RSA {
     BigInteger modulus;
 
     RSA () {
-        publicKey = new BigInteger("5");
-        privateKey = new BigInteger("11");
-        modulus = new BigInteger("14");
+        publicKey = new BigInteger("2");
+        privateKey = new BigInteger("2");
+        modulus = new BigInteger("2");
     }
 
     public String encrypt(String inputString) {
